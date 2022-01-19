@@ -10,6 +10,7 @@ var gameState = "start";
 
 var divisionHeight=300;
 var score =0;
+var count = 0;
 
 function setup() {
   createCanvas(800, 800);
@@ -97,8 +98,16 @@ function draw() {
     if(ball!=null)
     {
        ball.display();
-  
-  
+    }
+    
+    if(ball.body.position.y>760) {
+       if (ball.body.position.x>300) {
+          score = score + 500;
+          ball = null;
+          if(count>=5){
+            gameState = "end";
+          }
+       }
     }
 
    for (var k = 0; k < divisions.length; k++) 
