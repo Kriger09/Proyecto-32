@@ -107,6 +107,18 @@ function draw() {
           if(count>=5){
             gameState = "end";
           }
+       }else if(ball.body.position.x>301 && ball.body.position.x<600){
+          score = score + 100;
+          ball = null;
+          if(count>=5){
+            gameState = "end";
+          } 
+       }else if(ball.body.position.x>601 && ball.body.position.x<800){
+          score = score + 200;
+          ball = null;
+          if(count>=5){
+            gameState = "end";
+          }
        }
     }
 
