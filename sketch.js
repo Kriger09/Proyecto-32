@@ -35,7 +35,7 @@ function setup() {
           gameState = "end";
         }
       }
-      if(ball.body.position.x > 601 && ball.body.position.x < 900){
+      if(ball.body.position.x > 601 && ball.body.position.x < 800){
         score = score + 200;
         ball=null;
         if(count >= 5){
@@ -44,11 +44,7 @@ function setup() {
       }
     }
   }
-  if(gameState == "end"){
-    textSize(100);
-    text("GameOver",150,250);
-  }
-
+  
    for (var k = 0; k <=width; k = k + 80) {
      divisions.push(new Divisions(k, height-divisionHeight/2, 10, divisionHeight));
    }
@@ -90,6 +86,10 @@ function draw() {
   Engine.update(engine);
   ground.display();
 
+  if(gameState == "end"){
+    textSize(100);
+    text("GameOver",150,250);
+  }
 
   for (var i = 0; i < plinkos.length; i++) {
      plinkos[i].display();  
